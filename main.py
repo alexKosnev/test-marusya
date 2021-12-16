@@ -3,11 +3,11 @@ from aiohttp import web
 import os
 
 TOKEN = "7e03be3a7a811b10d93a62d43e119d09fd6e1d4fdb30b7f9de98da001270"
-HOST_PORT = int(os.environ.get('PORT', '8443'))
+HOST_PORT = int(os.environ.get('HOST_PORT', '8443'))
 updater = Updater(TOKEN)
 # add handlers
 updater.start_webhook(listen="0.0.0.0",
-                      port=PORT,
+                      port=HOST_PORT,
                       url_path=TOKEN,
                       webhook_url="https://test-marusya.herokuapp.com/" + TOKEN)
 updater.idle()
