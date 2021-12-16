@@ -1,10 +1,9 @@
 import aiohttp
 from aiohttp import web
 
-HOST_IP = "0.0.0.0"
 HOST_PORT = 8080
 
-async def test-marusya(request_obj):
+async def test_marusya(request_obj):
     request = await request_obj.json()
     
     response = {}
@@ -20,8 +19,8 @@ async def test-marusya(request_obj):
     
 def init():
     app = web.Application()
-    app.router.add_post("/test-marusya", test-marusya)
-    web.run_app(app, host = HOST_IP, port = HOST_PORT)
+    app.router.add_post("/test-marusya", test_marusya)
+    web.run_app(app, port = HOST_PORT)
     
 if __name__ == "__main__":
     init()
